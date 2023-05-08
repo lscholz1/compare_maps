@@ -43,19 +43,25 @@ body { margin: 0; padding: 0; }
 	// ADD YOUR ACCESS TOKEN FROM
 	// https://account.mapbox.com
 	mapboxgl.accessToken = 'pk.eyJ1IjoibHNjaG9seiIsImEiOiJjampxOHV2NmQyNG51M3ZvMW9pbWxia2p3In0.7g328iD7BVSwH4bcLBG_2w';
+	const bounds = [ 
+      			[11.808, 45.721], // Southwest coordinates
+			[12.634,46.101]]; // Northeast coordinates
+	
     const beforeMap = new mapboxgl.Map({
         container: 'before',
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
         style: 'mapbox://styles/mapbox/satellite-v9',
         center: [12.165, 45.912],
-        zoom: 11
+        zoom: 11,
+	maxBounds: bounds
     });
 
     const afterMap = new mapboxgl.Map({
         container: 'after',
         style: 'mapbox://styles/lscholz/ckr2a9hgt0ot318r2yrg8jdmp',
         center: [12.165, 45.912],
-        zoom: 11
+        zoom: 11,
+	maxBounds: bounds
     });
 
     // A selector or reference to HTML element
