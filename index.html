@@ -56,16 +56,7 @@ body { margin: 0; padding: 0; }
 	maxBounds: bounds
     });
 	
-     beforeMap.addSource('mapbox-dem', {
-	    'type': 'raster-dem',
-	    'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
-	    'tileSize': 512,
-	    'maxzoom': 14
-    });
 	
-    // add the DEM source as a terrain layer with exaggerated height
-    beforeMap.setTerrain({'source': 'mapbox-dem', 'exaggeration': 1.5});
-
     const afterMap = new mapboxgl.Map({
         container: 'after',
         style: 'mapbox://styles/lscholz/ckr2a9hgt0ot318r2yrg8jdmp',
@@ -81,6 +72,17 @@ body { margin: 0; padding: 0; }
         // Set this to enable comparing two maps by mouse movement:
         // mousemove: true
     });
+	
+     beforeMap.addSource('mapbox-dem', {
+	    'type': 'raster-dem',
+	    'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
+	    'tileSize': 512,
+	    'maxzoom': 14
+    });
+	
+    // add the DEM source as a terrain layer with exaggerated height
+    beforeMap.setTerrain({'source': 'mapbox-dem', 'exaggeration': 1.5});
+	
 </script>
 
 </body>
