@@ -39,9 +39,7 @@ body { margin: 0; padding: 0; }
     <div id="after" class="map"></div>
 </div>
 <script>
-	// TO MAKE THE MAP APPEAR YOU MUST
-	// ADD YOUR ACCESS TOKEN FROM
-	// https://account.mapbox.com
+	
 	mapboxgl.accessToken = 'pk.eyJ1IjoibHNjaG9seiIsImEiOiJjampxOHV2NmQyNG51M3ZvMW9pbWxia2p3In0.7g328iD7BVSwH4bcLBG_2w';
 	const bounds = [ 
       			[11.808, 45.721], // Southwest coordinates
@@ -73,10 +71,10 @@ body { margin: 0; padding: 0; }
         // mousemove: true
     });
 	
-beforeMap.on('style.load', function() {
+    beforeMap.on('style.load', function() {
     // Modify layout property
 
-     beforeMap.addSource('mapbox-dem', {
+    beforeMap.addSource('mapbox-dem', {
 	    'type': 'raster-dem',
 	    'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
 	    'tileSize': 512,
